@@ -6,10 +6,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a href="#" class="nav-link">Главная</a>
+                <router-link class="nav-link" to="/">Главная</router-link>
             </li>
             <li class="nav-item">
-                <a href="reference.html" class="nav-link">Справка</a>
+                <router-link class="nav-link" to="/reference">Справка</router-link>
             </li>
             <li class="nav-item">
                 <a href="#myModal" class="btn btn-primary" data-toggle="modal">Создать задачу</a> 
@@ -21,64 +21,19 @@
           <img src="img/avatar.jfif" alt="Иванов И.И." class="user-img">Иванов И.И.
        <span class="user-staf">Программист</span> </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="PersonalArea.html">Личный кабинет</a>
+          <router-link  class="dropdown-item" to="/personalarea">Личный кабинет</router-link>
           <a class="dropdown-item" href="#">Выход</a>
         </div>
     </div> 
     </div>   
 </nav>
-<div id="myModal" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+  
 
-      <!-- Заголовок модального окна -->
-      <div class="modal-header">
-        
-        <h4 class="modal-title">Создать задачу</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      </div>
-      <!-- Основное содержимое модального окна -->
-      <div class="modal-body">
-        <form id="task-form" class="form" method="post" >
-          <!-- <p class="form-task__p">Заголовок задачи</p> -->
-          <input type="text" class="form-control title-task"  placeholder="Введите заголовок">
-          
-
-      <textarea id="summernote" v-model="title" name="editordata"></textarea> 
-
-        <p class="form-task__p">Критичность</p>
-    <select name="form-control" id="" class="staf-exe">
-            <option>Критическая</option>
-            <option>Значительная</option>
-            <option>Незначительная</option>
-            <option>Тривиальная</option>
-          </select>
-    <p class="form-task__p">Исполнитель</p>
-    <select class="staf-exe">
-            <option>Иванов И.В.</option>
-            <option>Петров П.И</option>
-          </select>
-
-          
- <div class="form-group">
-    <p class="form-task__p">Прикрепить файл</p>
-    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-    <small id="fileHelp" class="form-text text-muted">Ограничения для файлов</small>
+   <section class="content-sect">
+    <router-view></router-view>
+</section> 
   </div>
-  <button type="button" role="button" class="btn btn-primary" v-on:click="addtaskform">Сохранить изменения</button>
-    </form>
-      </div>
-      <!-- Футер модального окна -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-        
-      </div>
-    
-    </div>
-  </div>
-</div>
-    <router-view/>
-  </div>
+
 </template>
 
 <style lang="sass">

@@ -1,6 +1,6 @@
 <template>
   <div class="reference">
-    <section class="content-sect">
+
     <div class="content-window container reference-wrap">
         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis veritatis aspernatur blanditiis animi temporibus eos neque harum asperiores nisi, molestiae, rem eaque magnam cumque tempore pariatur? Ex iste, harum eaque!</div>
         <div>Nisi ut quisquam, ea odio, harum eos consequuntur sequi nihil aspernatur illum earum, quo velit possimus incidunt, laborum asperiores quos vel! Ipsam, autem, pariatur. Quasi assumenda, enim ratione molestiae aliquam.</div>
@@ -10,6 +10,6 @@
 
         
     </div>
-</section>
+
   </div>
 </template>

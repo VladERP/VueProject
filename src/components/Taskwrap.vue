@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-<section class="content-sect">
+  <div class="taskwrap">
+
  
     <div class="content-window content-window__home" id="left-window">
       <h1>Задачи</h1>
@@ -29,7 +29,7 @@
         </div>
       </div>
       
-      
+     <Task/> 
     </div>
     <div class="content-window content-window__right content-window__home">
         <h1>Баги</h1>
@@ -44,16 +44,20 @@
     </div>
     
     
-</section></div>
+</div>
 </template>
 
 <script>
+import Task from '@/components/Task.vue'
+
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  name: 'Taskwrap',
+ components: {
+  Task
+ }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
