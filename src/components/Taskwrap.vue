@@ -28,8 +28,9 @@
 
         </div>
       </div>
-      
+
      <Task/> 
+
     </div>
     <div class="content-window content-window__right content-window__home">
         <h1>Баги</h1>

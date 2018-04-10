@@ -1,24 +1,62 @@
 <template>
-	<div class="task">
-		<div class="task-wrap">
+	<div id="addTask" >
+		<button @click="show = !show">
+    Переключить рендеринг
+  </button>
+<transition name="task-fade">
+	<div class="task" v-if="show">
+		<div class="task-wrap" v-for="item in items">
           <i class="fas fa-lightbulb fa-2x task-icon__task" style="color: #E7A900;"></i>
-          <a href="#" class="task-title">Реализовать платежную систему на странице "name"</a>
+          <a href="#" class="task-title">{{item.title}}</a>
           <div class="task-staf">
               <p class="task-staf__p">Автор:</p>
-              <a href="#" class="task-staf__a">Иванов И.В.</a>
+              <a href="#" class="task-staf__a">{{item.author}}</a>
           </div>
           <div class="task-date">
-              <p class="task-date__p date-start">c 14.03.2018 12:00</p>
-              <p class="task-date__p date-end">по 15.03.2018 12:00</p>
+              <p class="task-date__p date-start">c {{item.dateStart}}</p>
+              <p class="task-date__p date-end">по {{item.dateEnd}}</p>
           </div>
       </div>
 	</div>
+</transition>	
+	</div>
 </template>
 <script>
+
 export default {
-  name: 'Task'
-  
+
+  data(){
+  	return {
+  		show: true,
+  		items: [
+  			{
+  				title: 'Реализовать старницу 1',
+  				author: 'Иванов В.И.',
+  				dateStart: '19.10.2017',
+  				dateEnd: '01.01.2018',
+  				type: 'bug'
+
+
+
+  			},
+  			{
+  				title: 'Реализовать старницу 2',
+  				author: 'Иванов В.И.',
+  				dateStart: '19.10.2017',
+  				dateEnd: '01.01.2018',
+  				type: 'task'
+
+
+
+  			},
+
+  		]
+  	}
+  }
 }
+
+
+
 </script>
 <style scoped lang="sass">
 	.task-wrap
@@ -56,4 +94,14 @@ export default {
 				.task-date__p
 					color: #6B6B6B
 					font-size: 0.6em 
+	.task-fade-enter-active 
+		transition: all .3s ease
+
+	.task-fade-leave-active 
+		transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+
+	.task-fade-enter, .task-fade-leave-to
+		transform: translateX(10px)
+		opacity: 0
+					
 </style>
