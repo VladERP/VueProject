@@ -1,10 +1,5 @@
 <template>
-	<div id="addTask" >
-		<button @click="show = !show">
-    Переключить рендеринг
-  </button>
-<transition name="task-fade">
-	<div class="task" v-if="show">
+		<div class="task">
 		<div class="task-wrap" v-for="item in items">
           <i class="fas fa-lightbulb fa-2x task-icon__task" style="color: #E7A900;"></i>
           <a href="#" class="task-title">{{item.title}}</a>
@@ -18,45 +13,12 @@
           </div>
       </div>
 	</div>
-</transition>	
-	</div>
 </template>
 <script>
+	export default {
 
-export default {
-
-  data(){
-  	return {
-  		show: true,
-  		items: [
-  			{
-  				title: 'Реализовать старницу 1',
-  				author: 'Иванов В.И.',
-  				dateStart: '19.10.2017',
-  				dateEnd: '01.01.2018',
-  				type: 'bug'
-
-
-
-  			},
-  			{
-  				title: 'Реализовать старницу 2',
-  				author: 'Иванов В.И.',
-  				dateStart: '19.10.2017',
-  				dateEnd: '01.01.2018',
-  				type: 'task'
-
-
-
-  			},
-
-  		]
-  	}
-  }
+   props:['items']
 }
-
-
-
 </script>
 <style scoped lang="sass">
 	.task-wrap
