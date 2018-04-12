@@ -1,15 +1,22 @@
 <template>
 		<div class="task">
-		<div class="task-wrap" v-for="item in items">
-          <i class="fas fa-lightbulb fa-2x task-icon__task" style="color: #E7A900;"></i>
+		<div class="task-wrap">
+          <i class="far task-clock" :class = "sostClass"></i>
           <a href="#" class="task-title">{{item.title}}</a>
           <div class="task-staf">
               <p class="task-staf__p">Автор:</p>
               <a href="#" class="task-staf__a">{{item.author}}</a>
           </div>
+          <div class="task-type">
+              <p class="task-type__p">Тип:</p>
+              <p class="task-type__cont">{{item.type}}</p>
+          </div>
+          <i class="fas fa-lightbulb task-icon__task" :class="priorityClass"></i>
           <div class="task-date">
-              <p class="task-date__p date-start">c {{item.dateStart}}</p>
-              <p class="task-date__p date-end">по {{item.dateEnd}}</p>
+          	  <i class="far fa-calendar-alt task-date__calend"></i>	
+              <p class="task-date__p date-start">{{item.dateStart}}</p>
+              <p class="task-date__p date-start"> - </p>
+              <p class="task-date__p date-end"> {{item.dateEnd}}</p>
           </div>
       </div>
 	</div>
@@ -17,7 +24,23 @@
 <script>
 	export default {
 
-   props:['items']
+  props:['item'],
+
+    computed: {
+       priorityClass: function() {
+           let priority = this.item.priority;
+           return {
+               [priority]: true
+           }
+       },
+       sostClass: function(){
+       	let sost = this.item.sost;
+       	return{
+       		[sost]: true
+       	}
+       }
+
+    }
 }
 </script>
 <style scoped lang="sass">
@@ -30,15 +53,20 @@
 			display: flex
 			align-items: center
 			.task-icon__task
+				position: absolute
 				margin-left: 10px
-				font-size: 1.8em
+				font-size: 1.2em
+				bottom: 7px
 				color: red
 			.task-title
 				margin-left: 10px
-				font-size: 0.9em
+				font-size: 1em
+				width: 75%
+			.task-clock
+				margin-left: 10px	
 			.task-staf
 				position: absolute
-				left: 7px
+				left: 4%
 				bottom: 7px
 				width: 40%
 				& a,p
@@ -51,11 +79,18 @@
 					width: 50px
 					margin: 0
 			.task-date
-				position: absolute
+				
+				width: 15%
 				right: 7px
+				display: flex
+				.task-date__calend
+					display: flex
+					align-items: center
 				.task-date__p
 					color: #6B6B6B
-					font-size: 0.6em 
+					font-size: 0.8em 
+					margin: 0
+					margin-left: 3px
 	.task-fade-enter-active 
 		transition: all .3s ease
 
@@ -65,5 +100,16 @@
 	.task-fade-enter, .task-fade-leave-to
 		transform: translateX(10px)
 		opacity: 0
-					
+	.task-type
+		position: absolute
+		left: 20%
+		bottom: 7px		
+		display: flex	
+		& p
+			font-size: 0.9em 
+			width: auto	
+			column-width: 20px
+			float: left
+			color: #6B6B6B	
+			margin: 0 3px		
 </style>

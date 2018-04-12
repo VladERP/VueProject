@@ -20,7 +20,7 @@
       <textarea id="summernote" name="editordata"></textarea> 
 
         <p class="form-task__p">Критичность</p>
-    <select name="form-control" id="" class="staf-exe">
+    	<select name="form-control" id="" class="staf-exe">
             <option>Критическая</option>
             <option>Значительная</option>
             <option>Незначительная</option>
@@ -30,7 +30,8 @@
     <select class="staf-exe">
             <option>Иванов И.В.</option>
             <option>Петров П.И</option>
-          </select>
+    </select>
+   
 
           
  <div class="form-group">

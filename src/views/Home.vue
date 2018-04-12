@@ -3,16 +3,16 @@
     
     
     
- <div class="content-window content-window__home" id="left-window">
+ <div class="content-window  container" id="left-window">
  	<h1>Задачи</h1>
  	<Filtr/>
- 	<TaskList />
+ 	<TaskList/>
  </div>
-<div class="content-window content-window__right content-window__home">
+<!-- <div class="content-window content-window__right content-window__home">
         <h1>Баги</h1>
         <Filtr/> 
         <TaskList/>
-</div>
+</div> -->
   </div>
 </template>
 
@@ -20,6 +20,7 @@
 // @ is an alias to /src
 import TaskList from '@/components/TaskList.vue'
 import Filtr from '@/components/Filtr.vue'
+import data from '@/utils/data.js'
 export default {
   name: 'home',
   components: {
@@ -28,7 +29,20 @@ export default {
 
 
    
-  }
+  },
+ data(){
+  return data
+  },
+ computed:{
+ 	filteredList: function(){
+ 		var type = this.item.type;
+ 		return this.item.type.filter(function (elem) {
+ 		if(type==='bug') return true;
+        else return elem.item.type.indexOf(type) > -1;	
+ 		})
+
+ 	}
+ } 
 
 }
 </script>
