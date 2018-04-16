@@ -5,12 +5,12 @@
     
  <div class="content-window  container" id="left-window">
  	<h1>Задачи</h1>
- 	<Filtr/>
+ 	<FilterComp/> 
  	<TaskList/>
  </div>
 <!-- <div class="content-window content-window__right content-window__home">
         <h1>Баги</h1>
-        <Filtr/> 
+        
         <TaskList/>
 </div> -->
   </div>
@@ -19,30 +19,23 @@
 <script>
 // @ is an alias to /src
 import TaskList from '@/components/TaskList.vue'
-import Filtr from '@/components/Filtr.vue'
+import FilterComp from '@/components/FilterComp.vue'
 import data from '@/utils/data.js'
 export default {
   name: 'home',
   components: {
     TaskList,
-    Filtr,
+    FilterComp
+
 
 
    
   },
  data(){
   return data
-  },
- computed:{
- 	filteredList: function(){
- 		var type = this.item.type;
- 		return this.item.type.filter(function (elem) {
- 		if(type==='bug') return true;
-        else return elem.item.type.indexOf(type) > -1;	
- 		})
+  }
 
- 	}
- } 
+
 
 }
 </script>
@@ -59,6 +52,8 @@ export default {
   .content-window
     border-radius: 5px
     box-shadow: 0 0 10px rgba(0,0,0,0.5)
+    padding-bottom: 10px
+    margin-bottom: 15px
     & h1
       font-size: 1.5em
       margin: 0 auto

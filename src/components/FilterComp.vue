@@ -17,23 +17,35 @@
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Критическая</a>
-          <a class="dropdown-item" href="#">Значительная</a>
-          <a class="dropdown-item" href="#">Незначительная</a>
-          <a class="dropdown-item" href="#">Тривиальная</a>
+          <a class="dropdown-item" v-on:click="taskFilterKey = 'blocker'" href="#">Критическая</a>
+          <a class="dropdown-item" v-on:click="taskFilterKey = 'major'" href="#">Значительная</a>
+          <a class="dropdown-item" v-on:click="taskFilterKey = 'normal'" href="#">Незначительная</a>
+          <a class="dropdown-item" v-on:click="taskFilterKey = 'minor'" href="#">Тривиальная</a>
 
         </div>
       </div>
-        <div class="dropdown show filter">
+         <div class="dropdown show filter">
         <a class="btn btn-secondary dropdown-toggle sort-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Тип
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Задача</a>
-          <a class="dropdown-item" href="#">Баг</a>
+          <a class="dropdown-item" href="#" v-on:click="taskFilterKey = 'all'">Все</a>
+          <a class="dropdown-item" href="#" v-on:click="taskFilterKey = 'task'">Задача</a>
+          <a class="dropdown-item" href="#" v-on:click="taskFilterKey = 'bug'">Баг</a>
 
         </div>
       </div>
-  </div>    
+  </div>   
 </template>
+<script>
+import data from '@/utils/data.js'
+export default {
+
+  
+data(){
+  return data
+  }
+  }
+  
+</script>

@@ -22,9 +22,10 @@
 	</div>
 </template>
 <script>
+import Task from '@/components/Task.vue'
 	export default {
 
-  props:['item'],
+  	props:['item'],
 
     computed: {
        priorityClass: function() {
@@ -46,7 +47,7 @@
 <style scoped lang="sass">
 	.task-wrap
 			width: 100%
-			box-shadow: 0 0 3px rgba(0,0,0,0.5)
+			box-shadow: 0 0 1px rgba(0,0,0,0.5)
 			height: 100px
 			position: relative
 			border-radius: 3px
@@ -58,12 +59,21 @@
 				font-size: 1.2em
 				bottom: 7px
 				color: red
+			.minor
+				color: #6B6B6B
+			.major
+				color: #FFDD00	
+			.blocker
+				color: red	
+			.normal
+				color: #00DD00	
 			.task-title
 				margin-left: 10px
 				font-size: 1em
 				width: 75%
 			.task-clock
-				margin-left: 10px	
+				margin-left: 10px
+				width: 20px	
 			.task-staf
 				position: absolute
 				left: 4%
@@ -112,4 +122,6 @@
 			float: left
 			color: #6B6B6B	
 			margin: 0 3px		
+
+				
 </style>
