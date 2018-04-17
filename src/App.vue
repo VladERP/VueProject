@@ -62,8 +62,6 @@ body
 </style>
 <script>
 import popup from '@/components/popup.vue'
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
 export default {
   name: 'App',
  components: {

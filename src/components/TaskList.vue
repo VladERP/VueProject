@@ -1,10 +1,10 @@
 <template>
 	<div id="addTask" >
-		<template v-for="item in taskFilter">
-			<transition name="task-fade"> 
+		<div v-for="item in taskFilter" :key = "item.id">
+			
 				<Task :item="item"/>
-			</transition> 
-		</template>
+			
+		</div>
 	</div>
 </template>
 <script>

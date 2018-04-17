@@ -4,7 +4,7 @@
     
     
  <div class="content-window  container" id="left-window">
- 	<h1>Задачи</h1>
+ 	<!-- <h1>Задачи</h1> -->
  	<FilterComp/> 
  	<TaskList/>
  </div>
@@ -20,23 +20,13 @@
 // @ is an alias to /src
 import TaskList from '@/components/TaskList.vue'
 import FilterComp from '@/components/FilterComp.vue'
-import data from '@/utils/data.js'
+// import data from '@/utils/data.js'
 export default {
   name: 'home',
   components: {
     TaskList,
-    FilterComp
-
-
-
-   
-  },
- data(){
-  return data
+    FilterComp 
   }
-
-
-
 }
 </script>
 

@@ -18,7 +18,7 @@
           
 
       <textarea id="summernote" name="editordata"></textarea> 
-
+<DateTime/>
         <p class="form-task__p">Критичность</p>
     	<select name="form-control" id="" class="staf-exe">
             <option>Критическая</option>
@@ -54,5 +54,9 @@
 </div>
 </template>
 <script>
-
+import DateTime from '@/components/DateTime.vue'
+export default {
+	
+  components: { DateTime }
+	}
 </script>

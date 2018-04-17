@@ -30,41 +30,23 @@
 
  
  </div> 
- <div class="staff-project container content-window clearfix">
-   <h1>Проекты</h1>
-   <div class="row staff-project_wrap">
-      <div class="col-md-4 wrapper-staff__project">
-        <img src="img/project1.jpg" alt="" class="staff-project__img">
-        <div class="staff-project__status">
-            <p>В разработке</p>
-        </div> 
-        <div class="staff-project__wrap-title"> 
-            <a href="project.html">Пример названия проекта 1</a>
-        </div>
-      </div>
-      <div class="col-md-4 wrapper-staff__project">
-        <img src="img/project2.jpg" alt="" class="staff-project__img">
-        <div class="staff-project__status">
-            <p>Поддержка</p>
-        </div> 
-        <div class="staff-project__wrap-title"> 
-            <a href="project.html">Пример названия проекта 2</a>
-        </div>
-      </div>
-      <div class="col-md-4 wrapper-staff__project">
-        <img src="img/project3.jpg" alt="" class="staff-project__img">
-        <div class="staff-project__status">
-            <p>Закрыт</p>
-        </div> 
-        <div class="staff-project__wrap-title"> 
-            <a href="project.html">Пример названия проекта 3</a>
-        </div>
-      </div>
-   </div>
- </div>
+
+   
+    <ProjectList/>
+   
+ 
  </div> 
  </template>
+<script>
+  import ProjectList from '@/components/ProjectList.vue'
+export default {
+  name: 'personalarea',
+  components: {
+    ProjectList 
+  }
+}
 
+</script>
  <style scoped lang="sass">
 
    

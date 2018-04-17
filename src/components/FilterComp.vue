@@ -42,9 +42,12 @@
 import data from '@/utils/data.js'
 export default {
 
-  
 data(){
-  return data
+
+  return data 
+
+
+   
   }
   }
   
